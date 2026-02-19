@@ -3,9 +3,9 @@ package com.tambola.model;
 import com.tambola.rule.*;
 
 public enum GameType {
-    TOP_ROW(new TopRowRule()),
-    MIDDLE_ROW(new MiddleRowRule()),
-    BOTTOM_ROW(new BottomRowRule()),
+    TOP_ROW(new RowRule(Ticket::getTopRow)),
+    MIDDLE_ROW(new RowRule(Ticket::getMiddleRow)),
+    BOTTOM_ROW(new RowRule(Ticket::getBottomRow)),
     EARLY_FIVE(new EarlyFiveRule()),
     FULL_HOUSE(new FullHouseRule());
 

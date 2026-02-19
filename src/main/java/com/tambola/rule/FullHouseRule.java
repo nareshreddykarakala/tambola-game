@@ -1,11 +1,13 @@
 package com.tambola.rule;
 
-import com.tambola.model.NumberAnnouncement;
 import com.tambola.model.Ticket;
 
-public class FullHouseRule implements WinningRule {
+import java.util.Set;
+
+public class FullHouseRule extends AbstractWinningRule {
+
     @Override
-    public boolean isSatisfied(Ticket ticket, NumberAnnouncement announcement) {
-        return false;
+    protected boolean isSatisfiedNow(Ticket ticket, Set<Integer> announced) {
+        return announced.containsAll(ticket.getAllNumbers());
     }
 }
