@@ -1,6 +1,7 @@
 package com.tambola.service;
 
 import com.tambola.model.GameType;
+import com.tambola.model.NumberAnnouncement;
 import com.tambola.model.Ticket;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +24,7 @@ class ClaimValidatorTest {
 
         boolean result = validator.validate(
                 ticket,
-                List.of(4, 16),
+                new NumberAnnouncement(List.of(4, 16)),
                 GameType.TOP_ROW
         );
 
