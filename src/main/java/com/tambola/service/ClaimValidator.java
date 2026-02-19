@@ -7,6 +7,6 @@ import java.util.List;
 
 public class ClaimValidator {
     public boolean validate(Ticket ticket, List<Integer> announced, GameType gameType) {
-        return false;
+        return announced.containsAll(ticket.getTopRow());
     }
 }
