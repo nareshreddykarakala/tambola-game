@@ -1,10 +1,13 @@
 package com.tambola.model;
 
-import com.tambola.rule.TopRowRule;
-import com.tambola.rule.WinningRule;
+import com.tambola.rule.*;
 
 public enum GameType {
-    TOP_ROW(new TopRowRule());
+    TOP_ROW(new TopRowRule()),
+    MIDDLE_ROW(new MiddleRowRule()),
+    BOTTOM_ROW(new BottomRowRule()),
+    EARLY_FIVE(new EarlyFiveRule()),
+    FULL_HOUSE(new FullHouseRule());
 
     private final WinningRule rule;
 
